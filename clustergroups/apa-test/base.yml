@@ -6,7 +6,7 @@ metadata:
   namespace: tanzu-continuousdelivery-resources
 spec:
   interval: 10m0s
-  path: ./packages/clustergroups/apa-test
+  path: packages/clustergroups/apa-test
   prune: true
   sourceRef:
     kind: GitRepository

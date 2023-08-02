@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+generatorOptions:
+  disableNameSuffixHash: true
+
+resources:
+- package-install.yml
+
+
+secretGenerator:
+- name: prometheus-packages-values
+  namespace: tanzu-packages
+  files:
+  - values.yml
+  type: Opaque
+  options:
+    annotations:
+      tkg.tanzu.vmware.com/tanzu-package: prometheus-packages

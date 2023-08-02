@@ -1,0 +1,12 @@
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: contour
+  namespace: tanzu-packages
+spec:
+  serviceAccountName: pkg-gitops-pkgi-sa
+  packageRef:
+    refName: cert-manager.tanzu.vmware.com
+    versionSelection:
+      constraints: 1.7.2+vmware.1-tkg.1

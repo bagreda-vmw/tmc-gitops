@@ -1,0 +1,15 @@
+fullName:
+  clusterGroupName: apa-test
+  name: group-base
+spec:
+  atomicSpec:
+    interval: 300s
+    path: clustergroups/apa-test
+    prune: true
+    source:
+      name: platform-gitops
+      namespace: tanzu-continuousdelivery-resources
+type:
+  kind: Kustomization
+  package: vmware.tanzu.manage.v1alpha1.clustergroup.namespace.fluxcd.kustomization
+  version: v1alpha1

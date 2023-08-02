@@ -2,7 +2,7 @@
 apiVersion: packaging.carvel.dev/v1alpha1
 kind: PackageInstall
 metadata:
-  name: contour
+  name: cert-manager
   namespace: tkg-system
 spec:
   serviceAccountName: pkg-gitops-pkgi-sa

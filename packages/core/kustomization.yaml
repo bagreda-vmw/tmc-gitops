@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
 - ./cluster-name-secret/
 - ./cert-manager/
+- ./contour/
+- ./prometheus/

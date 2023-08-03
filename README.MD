@@ -11,10 +11,11 @@ This is focused on the APA R&D Lab services
 
 ### ClusterGroup Prep
 
-- Step 1: Assign Git Repo to the ClusterGroup
+
+- Step 2: Assign Git Repo to the ClusterGroup
 **tanzu tmc continuousdelivery gitrepository create -f groupprep/<groupname>/<groupname>-gitrepo.yaml -s clustergroup**
 
-- Step 2: Add cluster group sub folder to the git repo
+- Step 3: Add cluster group sub folder to the git repo
 **tanzu tmc continuousdelivery kustomization create -f groupprep/<groupname>/<groupname>-kustomize.yaml -s clustergroup**
 
 

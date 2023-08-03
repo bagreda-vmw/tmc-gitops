@@ -5,7 +5,7 @@ metadata:
   name: contour
   namespace: tkg-system
 spec:
-  serviceAccountName: tanzu-cluster-bootstrap-sa
+  serviceAccountName: platform-gitops-sa
   packageRef:
     refName: contour.tanzu.vmware.com
     versionSelection:

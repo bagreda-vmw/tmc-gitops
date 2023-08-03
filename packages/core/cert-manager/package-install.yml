@@ -5,7 +5,7 @@ metadata:
   name: cert-manager
   namespace: tkg-system
 spec:
-  serviceAccountName: tanzu-cluster-bootstrap-sa
+  serviceAccountName: platform-gitops-sa
   packageRef:
     refName: cert-manager.tanzu.vmware.com
     versionSelection:

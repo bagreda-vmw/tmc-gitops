@@ -5,6 +5,7 @@ generatorOptions:
 
 resources:
 - package-install.yml
+- clusterrolebinding.yml
 
 
 secretGenerator:

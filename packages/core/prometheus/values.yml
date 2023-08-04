@@ -28,7 +28,7 @@ prometheus:
           - --webhook-url=http://127.0.0.1:9090/-/reload
         resources: {}
   service:
-    type: "ClusterIP"
+    type: "LoadBalancer"
     port: 80
     targetPort: 9090
     labels: {}
@@ -37,7 +37,7 @@ prometheus:
     annotations: {}
     storageClassName: null
     accessMode: ReadWriteOnce
-    storage: "150Gi"
+    storage: "100Gi"
   #! The prometheus configuration
   config:
     prometheus_yml: |
@@ -659,8 +659,8 @@ prometheus:
 
 
 ingress:
-  enabled: true
-  virtual_host_fqdn: "prometheus.home.local"
+  enabled: false
+  virtual_host_fqdn: "$(.config.data.cluster_name)-prometheus.tanzu.playpen"
   prometheus_prefix: "/"
   alertmanager_prefix: "/alertmanager/"
   prometheusServicePort: 80

@@ -4,3 +4,4 @@ namespace: tkg-system
 resources:
 - serviceaccount.yml
 - psp.yml
+- clusterrole.yml

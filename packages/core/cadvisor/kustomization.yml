@@ -4,6 +4,6 @@ namespace: cadvisor
 commonLabels:
   app: cadvisor
 resources:
-- daemonset.yaml
-- namespace.yaml
-- serviceaccount.yaml
+- daemonset.yml
+- namespace.yml
+- serviceaccount.yml

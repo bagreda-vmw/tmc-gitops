@@ -3,11 +3,11 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: cadvisor
+  name: prometheus-node-exporter
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: psp:vmware-system-privileged 
+  name: psp:tanzu-system-privileged 
 subjects:
 - kind: ServiceAccount
   name: prometheus-node-exporter-sa

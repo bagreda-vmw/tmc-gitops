@@ -3,5 +3,5 @@ kind: Kustomization
 namespace: tkg-system
 resources:
 - serviceaccount.yml
-- psp.yml
+- securitypolicy.yml
 - clusterrole.yml

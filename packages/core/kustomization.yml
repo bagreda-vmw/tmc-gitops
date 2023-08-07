@@ -6,3 +6,5 @@ resources:
 - ./contour/
 - ./prometheus/
 - ./cadvisor/
+- ./fluent-bit/
+

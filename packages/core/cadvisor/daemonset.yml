@@ -1,51 +1,65 @@
-apiVersion: apps/v1 # for Kubernetes versions before 1.9.0 use apps/v1beta2
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: cadvisor
   namespace: cadvisor
-  annotations:
-      seccomp.security.alpha.kubernetes.io/pod: 'docker/default'
+  labels:
+    app: vrops-cadvisor
 spec:
   selector:
     matchLabels:
-      name: cadvisor
+      name: vrops-cadvisor
   template:
     metadata:
       labels:
-        name: cadvisor
+        name: vrops-cadvisor
+        version: v0.33.0
     spec:
-      serviceAccountName: cadvisor
+      tolerations:
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
+      hostNetwork: true
       containers:
-      - name: cadvisor
-        image: gcr.io/cadvisor/cadvisor:v0.45.0
-        resources:
-          requests:
-            memory: 400Mi
-            cpu: 400m
-          limits:
-            memory: 2000Mi
-            cpu: 800m
+      - name: vrops-cadvisor
+        image: google/cadvisor:v0.33.0
+        imagePullPolicy: Always
         volumeMounts:
         - name: rootfs
           mountPath: /rootfs
           readOnly: true
         - name: var-run
           mountPath: /var/run
-          readOnly: true
+          readOnly: false
         - name: sys
           mountPath: /sys
           readOnly: true
         - name: docker
-          mountPath: /var/lib/docker
+          mountPath: /var/lib/docker #Mouting Docker volume
+          readOnly: true
+        - name: docker-sock
+          mountPath: /var/run/docker.sock
+          readOnly: true
+        - name: containerd-sock
+          mountPath: /var/run/containerd.sock
           readOnly: true
         - name: disk
           mountPath: /dev/disk
           readOnly: true
         ports:
-          - name: http
-            containerPort: 8080
-            protocol: TCP
-      automountServiceAccountToken: false
+        - name: http
+          containerPort:
+          hostPort: 31194 
+          protocol: TCP
+        securityContext:
+          capabilities:
+            drop:
+            - ALL
+            add:
+            - NET_BIND_SERVICE
+        args:
+          - --port=31194
+          - --profiling
+          - --housekeeping_interval=1s
       terminationGracePeriodSeconds: 30
       volumes:
       - name: rootfs
@@ -59,7 +73,13 @@ spec:
           path: /sys
       - name: docker
         hostPath:
-          path: /var/lib/docker
+          path: /var/vcap/store/docker/docker #Docker path in Host System
+      - name: docker-sock  
+        hostPath:
+          path: /var/vcap/sys/run/docker/docker.sock
+      - name: containerd-sock
+        hostPath:
+          path: /var/run/docker/containerd/docker-containerd.sock
       - name: disk
         hostPath:
           path: /dev/disk

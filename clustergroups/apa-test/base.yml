@@ -6,13 +6,12 @@ metadata:
   namespace: tanzu-continuousdelivery-resources
 spec:
   interval: 10m0s
-  path: ./packages/rbac
+  path: ./packages/security/rbac
   prune: true
   sourceRef:
     kind: GitRepository
     namespace: tanzu-continuousdelivery-resources
     name: platform-gitops
-
 
 ---
 

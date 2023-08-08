@@ -11,6 +11,12 @@ This is focused on the APA R&D Lab services
 
 ### ClusterGroup Prep
 
+- Step 1: Enable Kustomization CD
+**tanzu tmc continuousdelivery enable -g <gropupname> -s clustergroup**
+
+- Step 2: Enable Helm
+**tanzu tmc helm enable -g <groupname> -s clustergroup**
+
 
 - Step 2: Assign Git Repo to the ClusterGroup
 **tanzu tmc continuousdelivery gitrepository create -f groupprep/<groupname>/<groupname>-gitrepo.yaml -s clustergroup**
@@ -19,4 +25,13 @@ This is focused on the APA R&D Lab services
 **tanzu tmc continuousdelivery kustomization create -f groupprep/<groupname>/<groupname>-kustomize.yaml -s clustergroup**
 
 
+
+
+
+
+### Custom Extensibility
+
+- Cluster Group Settings
+
+- Cluster specific settings
 

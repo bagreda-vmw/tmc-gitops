@@ -5,8 +5,8 @@ metadata:
   name: group-rbac
   namespace: tanzu-continuousdelivery-resources
 spec:
-  interval: 10m0s
-  path: ./packages/security/rbac
+  interval: 5m0s
+  path: packages/security/rbac
   prune: true
   sourceRef:
     kind: GitRepository
@@ -24,7 +24,7 @@ spec:
   dependsOn:
   - name: group-rbac
     namespace: tanzu-continuousdelivery-resources
-  interval: 10m0s
+  interval: 5m0s
   path: packages/clustergroups/apa-test
   prune: true
   sourceRef:
@@ -42,7 +42,7 @@ spec:
   dependsOn:
   - name: group-apps
     namespace: tanzu-continuousdelivery-resources
-  interval: 10m0s
+  interval: 5m0s
   path: clustergroups/common/per-cluster
   postBuild:
     substituteFrom:

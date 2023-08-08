@@ -4,7 +4,7 @@ metadata:
   name: cluster-gitops
   namespace: tanzu-continuousdelivery-resources
 spec:
-  interval: 10m0s
+  interval: 5m0s
   path: clusters/${cluster_name}
   prune: true
   sourceRef:

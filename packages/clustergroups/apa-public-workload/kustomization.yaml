@@ -5,5 +5,4 @@ generatorOptions:
 
 resources:
 - ../../common/
-- ../../services/cert-manager/
-- ../../services/contour/
+

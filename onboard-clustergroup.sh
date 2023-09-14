@@ -4,7 +4,7 @@
 
 
 function log() {
-  echo "\n\xf0\x9f\x93\x9d     --> $*\n"
+  echo -e "\n\xf0\x9f\x93\x9d     --> $*\n"
 }
 
 if [ -n "$1" ]; then

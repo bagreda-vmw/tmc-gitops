@@ -1,10 +1,10 @@
 fullName:
-  clusterGroupName: apa-test
+  clusterGroupName: lloydd-public
   name: group-base
 spec:
   atomicSpec:
     interval: 300s
-    path: clustergroups/apa-test
+    path: clustergroups/lloydd-public
     prune: true
     source:
       name: platform-gitops

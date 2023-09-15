@@ -8,7 +8,7 @@ resources:
 
 secretGenerator:
 - name: contour-packages-values
-  namespace: tanzu-system
+  namespace: tkg-system
   files:
   - values.yml
   type: Opaque

@@ -9,7 +9,7 @@ resources:
 
 secretGenerator:
 - name: prometheus-packages-values
-  namespace: tanzu-system
+  namespace: tkg-system
   files:
   - values.yml
   type: Opaque

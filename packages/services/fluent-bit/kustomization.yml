@@ -8,7 +8,7 @@ resources:
 
 secretGenerator:
 - name: fluent-bit-packages-values
-  namespace: tkg-system
+  namespace: tanzu-system
   files:
   - values.yml
   type: Opaque

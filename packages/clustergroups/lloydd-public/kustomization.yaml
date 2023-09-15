@@ -4,5 +4,6 @@ generatorOptions:
   disableNameSuffixHash: true
 
 resources:
+- ../../services/package-repo/
 - ../../common/
 

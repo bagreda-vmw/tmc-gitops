@@ -4,6 +4,7 @@ generatorOptions:
   disableNameSuffixHash: true
 
 resources:
+- ../../services/config-secret/
 - ../../common/
 - ../../services/cert-manager/
 - ../../services/contour/

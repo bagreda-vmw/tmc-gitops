@@ -5,10 +5,7 @@ kind: ConfigMap
 metadata:
   name: general-config
   namespace: tanzu-continuousdelivery-resources
-spec:
-  template:
-    type: generic
-    stringData:
-      logger_name: '10.90.144.11'
-      logger_port: '514'
-      clustergroup: apa-dev
+data:
+  logger_name: '10.90.144.11'
+  logger_port: '514'
+  clustergroup: apa-dev

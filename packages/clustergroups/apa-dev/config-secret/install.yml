@@ -9,8 +9,8 @@ spec:
   template:
     type: generic
     stringData:
-      logger_name: 10.90.144.11
-      logger_port: 514
+      logger_name: '10.90.144.11'
+      logger_port: '514'
 ---
 apiVersion: secretgen.carvel.dev/v1alpha1
 kind: SecretExport

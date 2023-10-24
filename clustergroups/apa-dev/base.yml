@@ -26,6 +26,12 @@ spec:
     namespace: tanzu-continuousdelivery-resources
   interval: 5m0s
   path: packages/clustergroups/apa-dev
+  postBuild:
+    substituteFrom:
+      - kind: ConfigMap
+        name: general-config
+        namespace: tanzu-continuousdelivery-resources
+
   prune: true
   sourceRef:
     kind: GitRepository

@@ -31,7 +31,6 @@ spec:
       - kind: ConfigMap
         name: general-config
         namespace: tanzu-continuousdelivery-resources
-
   prune: true
   sourceRef:
     kind: GitRepository

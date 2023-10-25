@@ -4,7 +4,7 @@ fullName:
 spec:
   atomicSpec:
     interval: 300s
-    path: clustergroups/apa-test
+    path: clustergroups/cloud
     prune: true
     source:
       name: platform-gitops

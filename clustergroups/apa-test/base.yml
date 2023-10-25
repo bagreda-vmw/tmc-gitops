@@ -25,7 +25,7 @@ spec:
   - name: group-rbac
     namespace: tanzu-continuousdelivery-resources
   interval: 5m0s
-  path: packages/clustergroups/apa-test
+  path: packages/clustergroups/cloud
   prune: true
   sourceRef:
     kind: GitRepository

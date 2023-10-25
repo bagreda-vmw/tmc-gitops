@@ -1,5 +1,5 @@
 fullName:
-  clusterGroupName: apa-test
+  clusterGroupName: cloud
   name: group-base
 spec:
   atomicSpec:

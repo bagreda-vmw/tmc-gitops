@@ -35,7 +35,7 @@ prometheus:
     annotations: {}
   pvc:
     annotations: {}
-    storageClassName: null
+    storageClassName: vc01cl01-t0compute
     accessMode: ReadWriteOnce
     storage: "100Gi"
   #! The prometheus configuration
@@ -690,7 +690,7 @@ alertmanager:
     annotations: {}
   pvc:
     annotations: {}
-    storageClassName: null
+    storageClassName: vc01cl01-t0compute
     accessMode: ReadWriteOnce
     storage: "2Gi"
 
